@@ -1,0 +1,35 @@
+@import "./variables.scss";
+@import './bgc.scss';
+
+.login {
+  width: 460px;
+  background-color: $bgc;
+
+  button {
+    background: $basic-green;
+  }
+
+  a {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: underline;
+  }
+
+  .bottom-text {
+    a {
+      color: $basic-red;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    width: auto;
+    padding: 8px;
+  }
+}
+
+

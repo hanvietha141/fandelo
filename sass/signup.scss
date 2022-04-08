@@ -1,0 +1,53 @@
+@import "./variables.scss";
+@import './bgc.scss';
+
+.register-form {
+  width: 680px;
+  background-color: $bgc;
+
+  .top-register {
+    display: flex;
+    justify-content: space-between;
+
+    .top-1,
+    .top-2 {
+      width: calc(50% - 8px);
+    }
+  }
+
+  .sign-up-btn {
+    background: $basic-red;
+    margin: 0;
+  }
+
+  .bottom-text {
+    a {
+      color: $basic-red;
+    }
+  }
+
+  @media (max-width: 500px) {
+    width: auto;
+
+    .top-register {
+      flex-direction: column;
+
+      .top-1,
+      .top-2 {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.error .error-message {
+  margin-top: -4px;
+}
+
+.open {
+  display: flex;
+}
+
+.open-block {
+  display: block;
+}

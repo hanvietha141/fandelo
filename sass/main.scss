@@ -1,0 +1,54 @@
+@import "./variables.scss";
+@import './bgc.scss';
+
+.app {
+  position: relative;
+
+  .heading {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 20px;
+
+    .img {
+      height: 52px;
+    }
+  }
+
+  .body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      font-size: 34px;
+      line-height: 56px;
+      max-width: 900px;
+      color: $text-white;
+    }
+
+    .btns {
+      width: 30%;
+
+      @media (max-width: 500px) {
+        width: 80%;
+      }
+    }
+
+    .btn {
+      a {
+        color: $text-white;
+      }
+    }
+
+    .sign-up {
+      background: $basic-red;
+    }
+
+    .sign-in {
+      background: $basic-green;
+    }
+  }
+}

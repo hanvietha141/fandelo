@@ -1,0 +1,27 @@
+@import "./variables.scss";
+@import './bgc.scss';
+
+.reset-password-body {
+  width: 402px;
+  background-color: $bgc;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    background: $basic-green;
+  }
+
+  p {
+    a {
+      color: $basic-red;
+    }
+  }
+}
+
+.error .error-message {
+  margin-top: -4px;
+}
+
+.open {
+  display: flex;
+}

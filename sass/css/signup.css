@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica";
+  font-style: normal;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.df {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.input {
+  padding: 20px;
+  margin: 8px 0;
+  width: 100%;
+  border-color: transparent;
+  border-radius: 3px;
+}
+
+.heading-text {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.bot-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+.btn {
+  padding: 15px;
+  margin: 20px 0;
+  cursor: pointer;
+  border-radius: 3px;
+  border-color: transparent;
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.p-40 {
+  padding: 40px;
+}
+
+.my-20 {
+  margin: 20px 0;
+}
+
+.my-30 {
+  margin: 30px 0;
+}
+
+.m-a {
+  margin: auto;
+}
+
+.mx-14 {
+  margin: 0 14px;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-sm {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #fff;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.error {
+  color: #e60a17;
+}
+.error input {
+  border-color: #e60a17;
+}
+.error .error-message {
+  margin-top: 4px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+  color: #e60a17;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.modal .modal-container {
+  width: 523px;
+  background-color: white;
+  position: relative;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal .modal-container h3 {
+  font-size: 24px;
+  line-height: 24px;
+}
+.modal .modal-container p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}
+.modal .modal-container a button {
+  background: #2f9a4c;
+  color: #fff;
+}
+
+body {
+  background: url(https://test.cdn.fandelo.com/images/welcome-bg.jpg) center center/cover no-repeat fixed;
+  height: 100vh;
+}
+
+.heading {
+  text-align: center;
+  padding-top: 20px;
+  margin: 30px 0;
+}
+
+.img {
+  height: 72px;
+}
+
+.register-form {
+  width: 680px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.register-form .top-register {
+  display: flex;
+  justify-content: space-between;
+}
+.register-form .top-register .top-1,
+.register-form .top-register .top-2 {
+  width: calc(50% - 8px);
+}
+.register-form .sign-up-btn {
+  background: #e60a17;
+  margin: 0;
+}
+.register-form .bottom-text a {
+  color: #e60a17;
+}
+@media (max-width: 500px) {
+  .register-form {
+    width: auto;
+  }
+  .register-form .top-register {
+    flex-direction: column;
+  }
+  .register-form .top-register .top-1,
+.register-form .top-register .top-2 {
+    width: 100%;
+  }
+}
+
+.error .error-message {
+  margin-top: -4px;
+}
+
+.open {
+  display: flex;
+}
+
+.open-block {
+  display: block;
+}
+
+/*# sourceMappingURL=signup.css.map */

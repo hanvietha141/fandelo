@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./sass/css/signin.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="heading">
+      <a href="./index.html">
+        <img class="img" src="./img/fandelo_logo.png" alt=""
+      /></a>
+    </div>
+
+    <div class="login p-40 m-a">
+      <h2 class="login-header heading-text">Vendor Log In</h2>
+      <div class="input-control">
+        <input class="email input" placeholder="Email" type="text" />
+        <div class="error-message"></div>
+      </div>
+      <div class="input-control">
+        <input class="pass input" placeholder="Password" type="password" />
+        <div class="error-message"></div>
+      </div>
+      <button class="login-btn btn">Log In</button>
+      <a href="./forgot.html" class="forgot text-sm">Forgot Your Password?</a>
+      <p class="bottom-text bot-text my-30">
+        Don't have account?
+        <a href="./signup.html"> Sign Up as a Vendor</a>
+      </p>
+    </div>
+
+    <script type="module" src="./js/signin.js"></script>
+  </body>
+</html>
