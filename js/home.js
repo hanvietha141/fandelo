@@ -51,6 +51,7 @@ listWImg.addEventListener("click", () => {
 
 gridView.addEventListener("click", () => {
   container.classList.add("close");
+  gridContainer.classList.remove("close");
 });
 
 renderType = JSON.parse(localStorage.getItem("renderType"));
@@ -119,12 +120,14 @@ function loadingPost(number) {
             ? `<div class="box2 title title-img-view">${posts[number].title}</div>`
             : ""
         }
-        <div class="dateTime my-4"> <i class="blur-icon-8 fa-solid fa-clock"></i> ${
-          posts[number].date
-        }</div>
-        <div class="located my-12"><i class="blur-icon-8 fa-solid fa-location-dot"></i> ${
-          posts[number].located
-        }</div>
+        <div>
+          <div class="dateTime my-4"> <i class="blur-icon-8 fa-solid fa-clock"></i> ${
+            posts[number].date
+          }</div>
+          <div class="located my-12"><i class="blur-icon-8 fa-solid fa-location-dot"></i> ${
+            posts[number].located
+          }</div>
+        </div>
       </div>
     </div>
   
@@ -174,47 +177,71 @@ window.addEventListener("scroll", function () {
 
 const gridContainer = document.querySelector(".grid-container");
 
-posts.map((post) => {
-  const grid = document.createElement("div");
-  grid.classList.add("grid");
-  gridContainer.appendChild(grid);
+let numberGrid = 0;
+let numberGridMore = 20;
 
-  let topNameString = "";
+function loadingPostGrid(numberGrid) {
+  let temp = numberGrid;
 
-  post.rate.map((rated) => {
-    let temp = `<div class='${
-      rated.higtlight ? "highlight" : ""
-    } my-4' >${rated.name.toString()}</div>
+  while (temp < numberGrid + numberGridMore) {
+    const grid = document.createElement("div");
+    grid.classList.add("grid");
+    gridContainer.appendChild(grid);
+
+    let topNameString = "";
+
+    posts[temp].rate.map((rated) => {
+      let temp = `<div class='${
+        rated.higtlight ? "highlight" : ""
+      } my-4' >${rated.name.toString()}</div>
       `;
-    topNameString += temp;
-  });
+      topNameString += temp;
+    });
 
-  grid.innerHTML = `
+    grid.innerHTML = `
     <div class="item" >
-      <img src=${post.img} ></img>
-      <div class="title">${post.title}</div>
+      <img src=${posts[temp].img} ></img>
+      <div class="title">${posts[temp].title}</div>
 
       <div class="timeDate">
         <div class="timeNLocationDetail df">
-          <div class="dateTime"> <i class="fa-solid fa-clock"></i> ${post.date}</div>
-          <div class="located"><i class="fa-solid fa-location-dot"></i> ${post.located}</div>
+          <div class="dateTime"> <i class="fa-solid fa-clock"></i> ${posts[temp].date}</div>
+          <div class="located"><i class="fa-solid fa-location-dot"></i> ${posts[temp].located}</div>
         </div>
       </div>
 
-      <div class="subHeader">${post.subHeader}</div>
+      <div class="subHeader">${posts[temp].subHeader}</div>
 
       <div class="topName">${topNameString}</div>
 
       <div class="interaction df ">
         <div class="cmt df blur-icon-8 my-4">
           <i class="fa-solid fa-comment"></i>
-          <div>${post.cmt}</div>
+          <div>${posts[temp].cmt}</div>
         </div>
 
         <div class="like df blur-icon-8 my-4">
           <i class="fa-solid fa-heart"></i>
-          <div>${post.like}</div>
+          <div>${posts[temp].like}</div>
         </div>
       </div>
     </div>`;
+
+    temp++;
+  }
+
+  numberGrid = temp;
+}
+
+loadingPostGrid(numberGrid)
+numberGrid += numberGridMore;
+
+window.addEventListener("scroll", function () {
+  if (
+    this.window.scrollY + this.window.innerHeight >=
+    document.documentElement.scrollHeight
+  ) {
+    loadingPostGrid(number);
+    numberGrid += numberGridMore;
+  }
 });

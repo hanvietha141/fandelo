@@ -19,6 +19,10 @@ input:focus-visible {
   display: flex;
 }
 
+.dn {
+  display: none;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -114,6 +118,10 @@ button:hover {
 
 .mx-20 {
   margin: 0px 20px;
+}
+
+.mx-50 {
+  margin: 0px 50px;
 }
 
 .font-bold {
@@ -266,9 +274,6 @@ button:hover {
   }
 }
 
-.sort {
-  margin: 0px 30px;
-}
 .sort .list,
 .sort .list-w-img,
 .sort .grid-view {
@@ -279,9 +284,6 @@ button:hover {
   background-color: #ccc;
 }
 
-.container {
-  margin: 0 50px;
-}
 .container .content .box1,
 .container .content .box2,
 .container .content .box4,
@@ -309,6 +311,141 @@ button:hover {
   display: inline-block;
 }
 
+@media (max-width: 1000px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 3.33333%;
+  }
+  .container .content {
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 2px 2px 8px #ccc;
+    padding: 20px;
+    margin: 16px 0;
+    border-radius: 3px;
+  }
+  .container .content .box2 .timeNLocationDetail {
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .container .content .box2 .timeNLocationDetail .title-img-view {
+    margin: 0;
+  }
+  .container .content .box2 .timeNLocationDetail .dateTime,
+.container .content .box2 .timeNLocationDetail .located {
+    margin: 0;
+  }
+  .container .content .box2 .timeNLocationDetail .dateTime {
+    margin-right: 8px;
+  }
+  .container .content .box2 .timeNLocationDetail > div {
+    margin: 12px 0 0 0;
+  }
+  .container .content .box3 .desc {
+    font-size: 14px;
+  }
+  .container .content .box5 {
+    padding: 8px 0;
+    border-top: 1px solid rgb(232, 224, 224);
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .container .content .box5 .like {
+    margin-left: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 3.33333%;
+  }
+  .container .content {
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 2px 2px 8px #ccc;
+    padding: 20px;
+    margin: 16px 0;
+    border-radius: 3px;
+  }
+  .container .content .box2 .timeNLocationDetail {
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .container .content .box2 .timeNLocationDetail .title-img-view {
+    margin: 0;
+  }
+  .container .content .box2 .timeNLocationDetail .dateTime,
+.container .content .box2 .timeNLocationDetail .located {
+    margin: 0;
+  }
+  .container .content .box2 .timeNLocationDetail .dateTime {
+    margin-right: 8px;
+  }
+  .container .content .box2 .timeNLocationDetail > div {
+    margin: 12px 0 0 0;
+  }
+  .container .content .box3 .desc {
+    font-size: 14px;
+  }
+  .container .content .box5 {
+    padding: 8px 0;
+    border-top: 1px solid rgb(232, 224, 224);
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .container .content .box5 .like {
+    margin-left: 8px;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-column-gap: 3.33333%;
+  }
+  .container .content {
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 2px 2px 8px #ccc;
+    padding: 20px;
+    margin: 16px 0;
+    border-radius: 3px;
+  }
+  .container .content .box2 .timeNLocationDetail {
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .container .content .box2 .timeNLocationDetail .title-img-view {
+    margin: 0;
+  }
+  .container .content .box2 .timeNLocationDetail .dateTime,
+.container .content .box2 .timeNLocationDetail .located {
+    margin: 0;
+  }
+  .container .content .box2 .timeNLocationDetail .dateTime {
+    margin-right: 8px;
+  }
+  .container .content .box2 .timeNLocationDetail > div {
+    margin: 12px 0 0 0;
+  }
+  .container .content .box3 .desc {
+    font-size: 14px;
+  }
+  .container .content .box5 {
+    padding: 8px 0;
+    border-top: 1px solid rgb(232, 224, 224);
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .container .content .box5 .like {
+    margin-left: 8px;
+  }
+}
 .highlight {
   color: #e60a17;
 }
@@ -333,7 +470,6 @@ button:hover {
   column-gap: 20px;
   column-fill: balance;
   margin: 20px auto 0;
-  padding: 2rem;
 }
 .grid-container .grid {
   display: inline-block;

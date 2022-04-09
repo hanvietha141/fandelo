@@ -27,6 +27,10 @@ input:focus-visible {
   display: flex;
 }
 
+.dn {
+  display: none;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -122,6 +126,10 @@ button:hover{
 
 .mx-20 {
   margin: 0px 20px;
+}
+
+.mx-50 {
+  margin: 0px 50px;
 }
 
 

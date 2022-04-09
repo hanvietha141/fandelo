@@ -1,5 +1,6 @@
 @import "./variables.scss";
 
+
 .nav {
   border-bottom: 2px solid #ccc;
   height: 52px;
@@ -87,7 +88,7 @@
       display: none;
     }
 
-    .navRight > .avt >img {
+    .navRight > .avt > img {
       display: none;
     }
 
@@ -98,7 +99,6 @@
 }
 
 .sort {
-  margin: 0px 30px;
   .list,
   .list-w-img,
   .grid-view {
@@ -111,7 +111,6 @@
 }
 
 .container {
-  margin: 0 50px;
 
   .content {
     .box1,
@@ -151,6 +150,198 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 3.33333%;
+    .content {
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 2px 2px 8px #ccc;
+      padding: 20px;
+      margin: 16px 0;
+      border-radius: 3px;
+
+      .box2 {
+        .timeNLocationDetail {
+          margin: 12px 0;
+          display: flex;
+          flex-direction: column;
+
+          .title-img-view  {
+            margin: 0;
+          }
+
+          .dateTime,
+          .located {
+            margin: 0;
+          }
+
+          .dateTime {
+            margin-right: 8px;
+          }
+        }
+
+        .timeNLocationDetail > div {
+          margin: 12px 0 0 0;
+        }
+
+        // .timeNLocation {
+        //   .timeNLocationDetail {
+        //     flex-direction: column;
+        //   }
+        // }
+      }
+
+      .box3 {
+        .desc {
+          font-size: 14px;
+        }
+      }
+
+      .box5 {
+        padding: 8px 0;
+        border-top: 1px solid rgb(232, 224, 224);
+        width: 100%;
+        justify-content: flex-end;
+
+        .like {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 3.33333%;
+    .content {
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 2px 2px 8px #ccc;
+      padding: 20px;
+      margin: 16px 0;
+      border-radius: 3px;
+
+      .box2 {
+        .timeNLocationDetail {
+          margin: 12px 0;
+          display: flex;
+          flex-direction: column;
+
+          .title-img-view  {
+            margin: 0;
+          }
+
+          .dateTime,
+          .located {
+            margin: 0;
+          }
+
+          .dateTime {
+            margin-right: 8px;
+          }
+        }
+
+        .timeNLocationDetail > div {
+          margin: 12px 0 0 0;
+        }
+
+        // .timeNLocation {
+        //   .timeNLocationDetail {
+        //     flex-direction: column;
+        //   }
+        // }
+      }
+
+      .box3 {
+        .desc {
+          font-size: 14px;
+        }
+      }
+
+      .box5 {
+        padding: 8px 0;
+        border-top: 1px solid rgb(232, 224, 224);
+        width: 100%;
+        justify-content: flex-end;
+
+        .like {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-column-gap: 3.33333%;
+    .content {
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 2px 2px 8px #ccc;
+      padding: 20px;
+      margin: 16px 0;
+      border-radius: 3px;
+
+      .box2 {
+        .timeNLocationDetail {
+          margin: 12px 0;
+          display: flex;
+          flex-direction: column;
+
+          .title-img-view  {
+            margin: 0;
+          }
+
+          .dateTime,
+          .located {
+            margin: 0;
+          }
+
+          .dateTime {
+            margin-right: 8px;
+          }
+        }
+
+        .timeNLocationDetail > div {
+          margin: 12px 0 0 0;
+        }
+
+        // .timeNLocation {
+        //   .timeNLocationDetail {
+        //     flex-direction: column;
+        //   }
+        // }
+      }
+
+      .box3 {
+        .desc {
+          font-size: 14px;
+        }
+      }
+
+      .box5 {
+        padding: 8px 0;
+        border-top: 1px solid rgb(232, 224, 224);
+        width: 100%;
+        justify-content: flex-end;
+
+        .like {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
+
 .highlight {
   color: $basic-red;
 }
@@ -176,7 +367,7 @@
   column-gap: 20px;
   column-fill: balance;
   margin: 20px auto 0;
-  padding: 2rem;
+  // padding: 2rem;
 
   .grid {
     display: inline-block;
