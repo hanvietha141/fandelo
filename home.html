@@ -11,6 +11,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+      integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="stylesheet" href="./sass/css/home.css" />
     <title>Document</title>
   </head>
@@ -49,7 +55,25 @@
       </div>
     </div>
 
-    <div class="body mx-50">
+    <div class="switch-data mx-50 df justify-between align-center ">
+      <div class="btns">
+        <button class="data1-btn border-transparent rounded p-15 my-12">
+          data 1
+        </button>
+        <button class="data2-btn border-transparent rounded p-15 my-12">
+          data 2
+        </button>
+      </div>
+
+      <div class="sort">
+        <select name="select" id="selection" >
+          <option value="all">All</option>
+          <option value="news">News</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="body data1 mx-50">
       <div class="sort">
         <button class="list">List</button>
         <button class="list-w-img">List with img</button>
@@ -58,8 +82,13 @@
 
       <div class="container"></div>
 
-      <div class="grid-container close "></div>s
+      <div class="grid-container close"></div>
     </div>
-    <script src="./js/home.js"></script>
+
+    <div class="data2 mx-50 close">
+      <div class="data2__container"></div>
+    </div>
+
+    <script type="module" src="./js/home.js"></script>
   </body>
 </html>

@@ -233,7 +233,7 @@ function loadingPostGrid(numberGrid) {
   numberGrid = temp;
 }
 
-loadingPostGrid(numberGrid)
+loadingPostGrid(numberGrid);
 numberGrid += numberGridMore;
 
 window.addEventListener("scroll", function () {
@@ -245,3 +245,169 @@ window.addEventListener("scroll", function () {
     numberGrid += numberGridMore;
   }
 });
+
+/////////////////////////////////
+
+const data1Btn = document.querySelector(".data1-btn");
+const data2Btn = document.querySelector(".data2-btn");
+const data1 = document.querySelector(".data1");
+const data2 = document.querySelector(".data2");
+
+data1Btn.addEventListener("click", () => {
+  data1.classList.remove("close");
+  data2.classList.add("close");
+});
+
+data2Btn.addEventListener("click", () => {
+  data1.classList.add("close");
+  data2.classList.remove("close");
+});
+
+async function axiosApi() {
+  const data = await axios({
+    method: "post",
+    url: "https://test.fandelo.com/api/portal/fan/home",
+    responseType: "stream",
+    headers: {
+      authorization: "Bearer 838ba62c-1695-47db-94ca-6cdedc2b9ea9",
+    },
+    data: { status: 1, pageSize: 50, pageIndex: 0 },
+  });
+
+  return data.data.responseData.data;
+}
+
+let data = await axiosApi();
+console.log(data);
+
+const data2Container = document.querySelector(".data2__container");
+
+function render(listPost, type) {
+  data2Container.innerHTML = "";
+
+  listPost.map((post) => {
+    if (type === "all") {
+      const item = document.createElement("div");
+      item.classList.add("item");
+      data2Container.appendChild(item);
+
+      item.innerHTML = `
+        ${
+          post.externalImageUrl
+            ? `<img class="img" alt="img" src="${post.externalImageUrl}" />`
+            : ""
+        }
+        <div class="header my-12">${post.talent.displayName}</div>
+        ${
+          post.description
+            ? `<div class="desc">${
+                post.description.length > 200
+                  ? post.description.substr(0, 200) + "..."
+                  : post.description
+              }</div>`
+            : ""
+        }
+        ${post.title ? `<div class="desc">${post.title}</div>` : ""}
+        <div class="interaction df">
+          <div class="like-btn">
+            <i class="fa-solid fa-heart"></i>
+            ${post.totalEmotion.totalLove}
+          </div>
+          <div class="comment-btn">
+            <i class="fa-solid fa-comment"></i>
+            ${post.totalComment}
+          </div>
+        </div>
+      `;
+
+      ///////// Like Handler
+      item.querySelector(".like-btn").addEventListener("click", function () {
+        likeHandler(
+          item.querySelector(".like-btn"),
+          post,
+          item.querySelector(".liked")
+        );
+        // console.log(post);
+      });
+    } else {
+      if (post.collection === type) {
+        const item = document.createElement("div");
+        item.classList.add("item");
+        data2Container.appendChild(item);
+
+        item.innerHTML = `
+        ${
+          post.externalImageUrl
+            ? `<img class="img" alt="img" src="${post.externalImageUrl}" />`
+            : ""
+        }
+        <div class="header my-12">${post.talent.displayName}</div>
+        ${
+          post.description
+            ? `<div class="desc">${
+                post.description.length > 200
+                  ? post.description.substr(0, 200) + "..."
+                  : post.description
+              }</div>`
+            : ""
+        }
+        ${post.title ? `<div class="desc">${post.title}</div>` : ""}
+        <div class="interaction df">
+          <div class="like-btn">
+            <i class="fa-solid fa-heart"></i>
+            ${post.totalEmotion.totalLove}
+          </div>
+          <div class="comment-btn">
+            <i class="fa-solid fa-comment"></i>
+            ${post.totalComment}
+          </div>
+        </div>
+        `;
+
+        ///////// Like Handler
+        item.querySelector(".like-btn").addEventListener("click", function () {
+          likeHandler(
+            item.querySelector(".like-btn"),
+            post,
+            item.querySelector(".liked")
+          );
+          // console.log(post);
+        });
+      }
+    }
+  });
+}
+
+render(data, "all");
+const select = document.querySelector("#selection");
+
+select.addEventListener("change", function (e) {
+  render(data, e.target.value);
+});
+
+////////////// Like
+
+function likeHandler(element, param, isLiked) {
+  for (let post of data) {
+    if (post.id === param.id) {
+      if (isLiked === null) {
+        post.totalEmotion.totalLove += 1;
+        element.classList.add("liked");
+
+        element.innerHTML = `
+          <i class="fa-solid fa-heart"></i>
+          ${post.totalEmotion.totalLove}
+        `;
+      } else {
+        post.totalEmotion.totalLove -= 1;
+        element.classList.remove("liked");
+
+        element.innerHTML = `
+          <i class="fa-solid fa-heart"></i>
+          ${post.totalEmotion.totalLove}
+        `;
+      }
+    }
+  }
+  console.log(element, param, isLiked);
+}

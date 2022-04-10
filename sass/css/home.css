@@ -80,6 +80,18 @@ button:hover {
   opacity: 0.8;
 }
 
+.border-transparent {
+  border-color: transparent;
+}
+
+.rounded {
+  border-radius: 3px;
+}
+
+.p-15 {
+  padding: 15px;
+}
+
 .p-40 {
   padding: 40px;
 }
@@ -272,6 +284,11 @@ button:hover {
   .nav .navRight {
     margin-right: -6%;
   }
+}
+
+.switch-data button {
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .sort .list,
@@ -535,6 +552,47 @@ button:hover {
 @media (min-width: 1200px) {
   .grid-container {
     column-count: 4;
+  }
+}
+
+.data2__container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 3.33333%;
+  grid-row-gap: 30px;
+}
+.data2__container .item {
+  font-size: 12px;
+}
+.data2__container .item .header {
+  font-weight: bold;
+}
+.data2__container .item .img {
+  width: 100%;
+}
+.data2__container .item .interaction {
+  color: rgba(0, 0, 0, 0.4);
+  justify-content: flex-end;
+}
+.data2__container .item .interaction .comment-btn {
+  margin-left: 8px;
+}
+.data2__container .item .interaction .liked {
+  color: #e60a17;
+}
+@media (max-width: 900px) {
+  .data2__container {
+    grid-template-columns: auto auto auto;
+  }
+}
+@media (max-width: 700px) {
+  .data2__container {
+    grid-template-columns: auto auto;
+  }
+}
+@media (max-width: 576px) {
+  .data2__container {
+    grid-template-columns: auto;
   }
 }
 
